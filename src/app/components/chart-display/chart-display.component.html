@@ -1,0 +1,8 @@
+<div *ngIf="lineChartData?.datasets?.length && lineChartData.datasets[0]?.data?.length">
+  <canvas
+    baseChart
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [type]="chartType"
+  ></canvas>
+</div>

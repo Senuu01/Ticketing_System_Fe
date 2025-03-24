@@ -1,0 +1,34 @@
+<div class="form-container">
+  <h2>Configuration Form</h2>
+  <form>
+    <label>Max Ticket Capacity:</label>
+    <input [(ngModel)]="config.maxTicketCapacity" name="maxTicketCapacity" type="number" />
+
+    <label>Ticket Pool Capacity:</label>
+    <input [(ngModel)]="config.ticketPoolCapacity" name="ticketPoolCapacity" type="number" />
+
+    <label>Number of Vendors:</label>
+    <input [(ngModel)]="config.vendorCount" name="vendorCount" type="number" />
+
+    <label>Min ticket release for Vendor:</label>
+    <input [(ngModel)]="config.minVendorRate" name="minVendorRate" type="number" />
+
+    <label>Max ticket release for Vendor:</label>
+    <input [(ngModel)]="config.maxVendorRate" name="maxVendorRate" type="number" />
+
+    <label>Number of Customers:</label>
+    <input [(ngModel)]="config.customerCount" name="customerCount" type="number" />
+
+    <label>Min ticket retrieval for Customer:</label>
+    <input [(ngModel)]="config.minCustomerRate" name="minCustomerRate" type="number" />
+
+    <label>Max ticket retrieval for Customer:</label>
+    <input [(ngModel)]="config.maxCustomerRate" name="maxCustomerRate" type="number" />
+
+
+
+    <button type="button" (click)="onStart()">Start Simulation</button>
+
+
+  </form>
+</div>
