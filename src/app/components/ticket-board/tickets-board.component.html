@@ -1,0 +1,20 @@
+<div *ngIf="status" class="board">
+  <h2>Tickets Board</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Added Tickets</th>
+      <th>Sold Tickets</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vendor of status?.vendors">
+      <td>{{ vendor.name }}</td>
+      <td>{{ vendor.addedTickets }}</td>
+      <td>{{ vendor.soldTickets }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
