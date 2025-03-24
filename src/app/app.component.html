@@ -1,0 +1,31 @@
+<header>
+  Ticketing Simulation Dashboard
+</header>
+
+<main>
+  <!-- Configuration Form -->
+  <app-config-form (start)="onStartSimulation($event)"></app-config-form>
+
+  <!-- Main Dashboard -->
+  <div *ngIf="!isRunning">Simulation is not running. Start the simulation.</div>
+
+  <div *ngIf="isRunning">
+    <div class="dashboard">
+      <!-- Tickets Board -->
+      <app-tickets-board *ngIf="currentStatus?.vendors" [status]="currentStatus"></app-tickets-board>
+
+      <!-- Chart Display -->
+      <app-chart-display
+        *ngIf="(currentStatus?.salesData ?? []).length > 0"
+        [status]="currentStatus"
+      ></app-chart-display>
+
+    </div>
+  </div>
+
+  <!-- Control Buttons -->
+  <div class="controls">
+    <button *ngIf="isRunning" (click)="onStopSimulation()">Stop Simulation</button>
+    <button (click)="onResetSimulation()">Reset Simulation</button>
+  </div>
+</main>
